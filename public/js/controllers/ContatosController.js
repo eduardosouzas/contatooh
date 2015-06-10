@@ -1,4 +1,4 @@
-angular.module('contatooh').controller('ContatosController', ['$scope', '$resource', function ($scope, Contato) {
+angular.module('contatooh').controller('ContatosController', function ($scope, Contato) {
     $scope.contatos = [];
     $scope.filtro = '';
     $scope.mensagem = {texto: ''};
@@ -26,4 +26,4 @@ angular.module('contatooh').controller('ContatosController', ['$scope', '$resour
     };
 
     buscaContatos();
-}]);
+});
