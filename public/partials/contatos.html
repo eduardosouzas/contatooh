@@ -4,13 +4,23 @@
         Bem-vindo ao Contatooh
     </h1>
 </div>
-<button class="btn btn-primary" ng-click="incrementa()">
-    Novo
-</button>
+<p ng-show="mensagem.texto">
+    {{mensagem.texto}}
+</p>
+
+<a ng-href="#/contato" class="btn btn-primary">Novo Contato</a>
+
 <input type="search" ng-model="filtro" placeholder="parte do nome">
-<p>Contatos cadastrados: {{total}}</p>
+
+<p ng-show="contatos.length">
+    Contatos cadastrados: {{contatos.length}}
+</p>
+
 <div class="table-responsive">
-    <table class="table table-hover">
+    <p class="text-info" ng-hide="contatos.length">
+        Não há contatos cadastrados
+    </p>
+    <table class="table table-hover"  ng-show="contatos.length">
         <tr>
             <th>NOME</th>
             <th>E-MAIL</th>
@@ -18,11 +28,11 @@
         </tr>
         <tr ng-repeat="contato in contatos | filter: filtro">
             <td>
-                <a>{{contato.nome}}</a>
+                <a ng-href="#/contato/{{contato._id}}">{{contato.nome}}</a>
             </td>
             <td>{{contato.email}}</td>
             <td class="text-center">
-                <button class="btn btn-warning">Remover</button>
+                <button class="btn btn-warning" ng-click="remove(contato)">Remover</button>
             </td>
         </tr>
     </table>
