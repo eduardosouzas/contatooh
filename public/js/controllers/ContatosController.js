@@ -11,7 +11,7 @@ angular.module('contatooh').controller('ContatosController',function($scope,Cont
 			},
 			function(erro) {
 				$scope.mensagem = {
-					texto: 'N�o foi poss�vel obter a lista'
+					texto: 'Nao foi possivel obter a lista'
 				};
 				console.log(erro);
 			}
@@ -24,7 +24,7 @@ angular.module('contatooh').controller('ContatosController',function($scope,Cont
 			buscaContatos,
 			function(erro) {
 				$scope.mensagem = {
-					texto: 'N�o foi poss�vel remover o contato'
+					texto: 'Nao foi possivel remover o contato'
 				};
 				console.log(erro);
 			}
